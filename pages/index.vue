@@ -2,8 +2,9 @@
 useHead({});
 </script>
 <template>
-  <div>
+  <div class="text-center text-white py-5">
     <h1>Hypnoponies</h1>
-    <AppAlert>Welcome to Hypnoponies</AppAlert>
+    <p>Welcome to Hypnoponies</p>
+    <a href="https://discord.gg/WBVkUTN" class="text-white">Join the Discord</a>
   </div>
 </template>
