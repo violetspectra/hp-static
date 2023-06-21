@@ -1,3 +1,6 @@
+<script setup>
+useHead({});
+</script>
 <template>
   <div>
     <h1>Hypnoponies</h1>
