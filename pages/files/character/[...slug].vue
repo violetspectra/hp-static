@@ -70,7 +70,7 @@ if (!data.value) {
               <a
                 class="col-auto text-white text-decoration-none ms-auto"
                 :href="download.source"
-                :download="download.source"
+                download
                 target="_blank"
                 ><i class="bi bi-download"></i
               ></a>
