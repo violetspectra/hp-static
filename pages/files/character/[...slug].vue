@@ -60,17 +60,20 @@ if (!data.value) {
           </div>
           <div v-for="version in data?.versions" class="mb-2">
             <p class="mb-0 fw-bold">{{ version.name }}</p>
-            <div v-for="download in version.downloads" class="row py-1">
+            <div
+              v-for="download in version.downloads"
+              class="row py-1 rounded hypno-file-link"
+            >
               <div class="col-auto">
                 {{ download.name }}
               </div>
               <a
-                class="col-auto text-white text-decoration-none"
+                class="col-auto text-white text-decoration-none ms-auto"
                 :href="download.source"
                 :download="download.source"
                 target="_blank"
-                >DL</a
-              >
+                ><i class="bi bi-download"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -88,3 +91,13 @@ if (!data.value) {
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.hypno-file-link {
+  transition-duration: 200ms;
+
+  &:hover {
+    background-color: #00000055;
+  }
+}
+</style>
