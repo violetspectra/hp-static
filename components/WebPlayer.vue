@@ -36,7 +36,11 @@ const progressHover = (e: MouseEvent) => {
             style="height: 0.4rem; background-color: #e9ecef9e"
           >
             <div
-              style="background: #4c00daee; height: 100%"
+              style="
+                background: #4c00daee;
+                height: 100%;
+                transition-duration: 50ms;
+              "
               :style="{ width: barPositionPercent + '%' }"
             ></div>
           </div>
