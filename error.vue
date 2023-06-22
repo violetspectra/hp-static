@@ -3,6 +3,10 @@ const props = defineProps({
   error: Object,
 });
 
+useHead({
+  title: "Error - Hypnoponies",
+});
+
 const handleError = () => clearError({ redirect: "/" });
 </script>
 
