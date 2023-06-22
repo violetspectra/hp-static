@@ -61,7 +61,7 @@ if (!data.value) {
           <div v-for="version in data?.versions" class="mb-2">
             <p class="mb-0 fw-bold">{{ version.name }}</p>
             <div v-for="download in version.downloads" class="row py-1">
-              <div class="col-auto" style="cursor: pointer">
+              <div class="col-auto">
                 {{ download.name }}
               </div>
               <a
@@ -82,7 +82,7 @@ if (!data.value) {
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xxl-11">
-          <WebPlayer></WebPlayer>
+          <WebPlayer class="shadow"></WebPlayer>
         </div>
       </div>
     </div>
