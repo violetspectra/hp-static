@@ -2,9 +2,42 @@
 useHead({});
 </script>
 <template>
-  <div class="text-center text-white py-5">
-    <h1>Hypnoponies</h1>
-  <div class="w-100 py-5 bg-gradient-darkpurple-lessdarkpurple">
+  <div class="text-center text-white py-5 container">
+    <div class="mb-4">
+      <h1>Hypnoponies</h1>
+      <p>
+        Welcome to Hypnoponies. You will find links to the files below.<br />
+        <a href="https://discord.gg/WBVkUTN" class="text-white"
+          >Join the Discord</a
+        >
+      </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <NavigationCard
+          title="Character"
+          location="/files/character"
+          imageUrl="/files/character/character-icon.png"
+        />
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <NavigationCard
+          title="Experience"
+          location="/files/experience"
+          disabled="true"
+        />
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <NavigationCard
+          title="Support"
+          location="/files/support"
+          disabled="true"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="w-100 py-5 px-3 bg-gradient-darkpurple-lessdarkpurple">
     <div class="d-flex justify-content-center">
       <div
         class="text-white rounded-3 px-3 py-3"
