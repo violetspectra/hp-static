@@ -18,7 +18,7 @@ const props = defineProps({
           class="mb-2"
           style="max-width: 100%; height: 80%; object-fit: contain"
         />
-        <h2>{{ title }}</h2>
+        <p class="h4">{{ title }}</p>
       </div>
     </NuxtLink>
   </div>
