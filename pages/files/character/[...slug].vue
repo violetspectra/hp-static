@@ -6,12 +6,15 @@
       <p>
         These are the character files, and are themed around a specific
         character.<br />
-        <NuxtLink to="/" class="text-white">&lt; Home</NuxtLink>
+        <NuxtLink to="/" class="text-white">Home</NuxtLink> &lt;
+        <NuxtLink to="/files/character" class="text-white"
+          >Character Files</NuxtLink
+        >
       </p>
     </div>
     <div class="d-flex justify-content-center prose-container">
       <div
-        class="text-start rounded px-3 py-4"
+        class="text-start rounded px-3 py-4 w-100"
         style="max-width: 50rem; background-color: #ffffff38"
       >
         <ContentDoc />

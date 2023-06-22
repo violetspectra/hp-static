@@ -10,12 +10,12 @@ const { data } = await useAsyncData(() =>
       <p>
         These are the character files, and are themed around a specific
         character.<br />
-        <NuxtLink to="/" class="text-white">&lt; Home</NuxtLink>
+        <NuxtLink to="/" class="text-white">Home</NuxtLink>
       </p>
     </div>
 
     <div class="row">
-      <div v-for="character in data" class="col-md-6 col-lg-3 mb-4">
+      <div v-for="character in data" class="col-md-6 col-lg-4 col-xl-3 mb-4">
         <NavigationCard
           :location="character._path"
           :title="character.title"
