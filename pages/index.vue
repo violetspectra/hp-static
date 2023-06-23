@@ -54,7 +54,7 @@ useHead({});
               With each step forward, we become stronger, wiser, and kinder,
               evolving into the ponies we are destined to be. So spread your
               wings and let the winds of change carry you to new heights, for
-              the magic of friendship will guide you, always.""
+              the magic of friendship will guide you, always."
             </p>
           </blockquote>
           <figcaption class="blockquote-footer text-white mb-0">
