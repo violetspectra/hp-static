@@ -116,7 +116,7 @@ useAsyncData(`content-${path}`, () => {
       </div>
     </div>
   </div>
-  <div class="py-4 mt-4"></div>
+  <!-- <div class="py-4 mt-4"></div>
   <div class="position-fixed bottom-0 start-0 end-0 mb-3">
     <div class="container">
       <div class="row justify-content-center">
@@ -125,7 +125,7 @@ useAsyncData(`content-${path}`, () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style scoped lang="scss">
