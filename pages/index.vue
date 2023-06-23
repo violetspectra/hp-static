@@ -4,7 +4,13 @@ useHead({});
 <template>
   <div class="text-center text-white py-5 container">
     <div class="mb-4">
-      <h1>Hypnoponies</h1>
+      <img
+        src="/img/hypnoponies-logo.png"
+        height="50px"
+        class="mb-2"
+        style="filter: drop-shadow(2px 2px 2px #00000050)"
+      />
+      <h1 class="visually-hidden">Hypnoponies</h1>
       <p>
         Welcome to Hypnoponies. You will find links to the files below.<br />
         <a href="https://discord.gg/WBVkUTN" class="text-white"
