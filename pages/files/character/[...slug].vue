@@ -17,9 +17,22 @@ const { data } = await useAsyncData(`content-${path}`, () =>
   queryContent<HypnoFile>(path).findOne()
 );
 
-if (!data.value) {
-  throw createError({ statusCode: 404, statusMessage: "Page not found" });
-}
+// if (!data.value) {
+//   throw createError({ statusCode: 404, statusMessage: "Page not found" });
+// }
+
+/**
+ * Triggers the inline player
+ */
+const audioPlayer = ref();
+const playAudioInline = (
+  characterName: string,
+  version: string,
+  edition: string,
+  sourceURL: string
+) => {
+  audioPlayer.value.playAudio(characterName, version, edition, sourceURL);
+};
 </script>
 <template>
   <div class="text-white py-5 container">
@@ -96,7 +109,18 @@ if (!data.value) {
               class="row py-1 rounded hypno-file-link"
             >
               <div class="col-auto">
-                {{ download.name }}
+                <span
+                  @click="
+                    playAudioInline(
+                      data?.title as string,
+                      version.name,
+                      download.name,
+                      download.source
+                    )
+                  "
+                  style="cursor: pointer"
+                  >{{ download.name }}</span
+                >
               </div>
               <a
                 class="col-auto text-white text-decoration-none ms-auto"
@@ -111,16 +135,16 @@ if (!data.value) {
       </div>
     </div>
   </div>
-  <!-- <div class="py-4 mt-4"></div>
+  <div class="py-4 mt-4"></div>
   <div class="position-fixed bottom-0 start-0 end-0 mb-3">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xxl-11">
-          <WebPlayer class="shadow"></WebPlayer>
+          <WebPlayer class="shadow" ref="audioPlayer"></WebPlayer>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <style scoped lang="scss">
