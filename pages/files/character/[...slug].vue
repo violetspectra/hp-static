@@ -85,9 +85,9 @@ const playAudioInline = (
             So it's better to really think through your choice of which pony you
             want to use and stick with them.
           </p>
-          <ContentRenderer :value="data" />
-
-          <!-- <ContentDoc /> -->
+          <ContentRenderer :value="data?.body">
+            <ContentRendererMarkdown :value="data?.body" />
+          </ContentRenderer>
         </div>
       </div>
       <div class="col-lg-5 col-xl-4 col-xxl-3">
