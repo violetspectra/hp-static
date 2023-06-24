@@ -13,16 +13,13 @@ interface HypnoFile extends ParsedContent {
   }[];
 }
 
-const fileData = ref<HypnoFile>();
+const { data } = await useAsyncData(`content-${path}`, () =>
+  queryContent<HypnoFile>(path).findOne()
+);
 
-useAsyncData(`content-${path}`, () => {
-  return queryContent<HypnoFile>().where({ _path: path }).findOne();
-}).then(({ data }) => {
-  if (!data.value) {
-    throw createError({ statusCode: 404, statusMessage: "Page not found" });
-  }
-  fileData.value = data.value;
-});
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: "Page not found" });
+}
 </script>
 <template>
   <div class="text-white py-5 container">
@@ -75,9 +72,7 @@ useAsyncData(`content-${path}`, () => {
             So it's better to really think through your choice of which pony you
             want to use and stick with them.
           </p>
-          <ContentRenderer :value="fileData?.body">
-            <ContentRendererMarkdown :value="fileData?.body" />
-          </ContentRenderer>
+          <ContentRenderer :value="data" />
 
           <!-- <ContentDoc /> -->
         </div>
@@ -89,12 +84,12 @@ useAsyncData(`content-${path}`, () => {
               class="transparent-white-background rounded p-4 d-flex justify-content-center"
             >
               <img
-                :src="fileData?.icon"
+                :src="data?.icon"
                 style="max-width: 100%; max-height: 100%; object-fit: contain"
               />
             </div>
           </div>
-          <div v-for="version in fileData?.versions" class="mb-2">
+          <div v-for="version in data?.versions" class="mb-2">
             <p class="mb-0 fw-bold">{{ version.name }}</p>
             <div
               v-for="download in version.downloads"
