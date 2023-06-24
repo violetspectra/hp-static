@@ -31,14 +31,14 @@ useHead({});
         <NavigationCard
           title="Experience"
           location="/files/experience"
-          disabled="true"
+          :disabled="true"
         />
       </div>
       <div class="col-md-6 col-lg-3 mb-4">
         <NavigationCard
           title="Support"
           location="/files/support"
-          disabled="true"
+          :disabled="true"
         />
       </div>
     </div>
