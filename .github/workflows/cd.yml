@@ -24,7 +24,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://tailplume.io
+      url: https://hypnoponies.net
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
