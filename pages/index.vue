@@ -6,9 +6,8 @@ useHead({});
     <div class="mb-4">
       <img
         src="/img/hypnoponies-logo.png"
-        height="50px"
         class="mb-2"
-        style="filter: drop-shadow(2px 2px 2px #00000050)"
+        style="height: 50px; filter: drop-shadow(2px 2px 2px #00000050)"
       />
       <h1 class="visually-hidden">Hypnoponies</h1>
       <p>
