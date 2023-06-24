@@ -35,6 +35,7 @@ const audioMetadata = reactive({
   subtitle: "",
   duration: 0,
   currentTime: 0,
+  visible: false,
 });
 
 const formatTime = (seconds: number) => {
@@ -55,7 +56,7 @@ const formattedDuration = computed(() => {
   return formatTime(audioMetadata.duration);
 });
 
-const audioFile = ref<HTMLAudioElement>();
+const audioFile = ref<HTMLAudioElement | null>();
 const playAudio = (
   characterName: string,
   version: string,
@@ -64,6 +65,7 @@ const playAudio = (
 ) => {
   audioMetadata.title = characterName;
   audioMetadata.subtitle = version + " | " + edition;
+  audioMetadata.visible = true;
   audioFile.value = new Audio(sourceURL);
   audioFile.value.volume = 1;
   audioFile.value.play();
@@ -78,9 +80,19 @@ const playAudio = (
   });
 };
 defineExpose({ playAudio });
+
+onUnmounted(() => {
+  if (audioFile.value) {
+    audioFile.value.load();
+    audioFile.value = null;
+  }
+});
 </script>
 <template>
-  <div class="player-bg px-4 py-3 rounded">
+  <div
+    class="player player-bg px-4 py-3 rounded"
+    :class="{ visible: audioMetadata.visible }"
+  >
     <div class="row text-white">
       <div class="col-auto" style="font-size: 3rem; line-height: 1">
         <i
@@ -137,10 +149,23 @@ defineExpose({ playAudio });
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .player-bg {
   background: #c47effa1;
   background: linear-gradient(27deg, #c47effa1, #db809dbd);
   backdrop-filter: blur(3px);
+}
+
+.player {
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  transform: translateY(0.7rem) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  &.visible {
+    transform: none;
+    opacity: 1;
+    pointer-events: initial;
+  }
 }
 </style>
