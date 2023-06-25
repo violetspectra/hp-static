@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     "~/node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
   ],
   content: {
-    documentDriven: true,
+    documentDriven: {
+      injectPage: false,
+    },
   },
 });
