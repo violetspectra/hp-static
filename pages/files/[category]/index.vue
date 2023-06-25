@@ -1,24 +1,18 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data } = await useAsyncData(`content-${route.path}`, () =>
-  queryContent(`/files/${route.params.category}`)
-    .only(["title", "icon", "_path"])
-    .where({ _partial: false })
-    .find()
-);
+const data = await queryContent(`/files/${route.params.category}`)
+  .only(["title", "icon", "_path"])
+  .where({ _partial: false })
+  .find();
 
 // if (!data.value || data.value.length <= 0) {
 //   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 // }
 
-const { data: categoryMeta } = await useAsyncData(
-  `category-meta-${route.path}`,
-  () =>
-    queryContent(`/files/${route.params.category}`)
-      .where({ _partial: true })
-      .findOne()
-);
+const categoryMeta = await queryContent(`/files/${route.params.category}`)
+  .where({ _partial: true })
+  .findOne();
 </script>
 <template>
   <div class="text-center text-white py-5 container">
