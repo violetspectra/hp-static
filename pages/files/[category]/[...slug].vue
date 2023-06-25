@@ -17,9 +17,9 @@ const { data } = await useAsyncData(`content-${path}`, () =>
   queryContent<HypnoFile>(path).findOne()
 );
 
-if (!data.value) {
-  throw createError({ statusCode: 404, statusMessage: "Page not found" });
-}
+// if (!data.value) {
+//   throw createError({ statusCode: 404, statusMessage: "Page not found" });
+// }
 
 /**
  * Triggers the inline player

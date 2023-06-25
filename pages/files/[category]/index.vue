@@ -8,9 +8,9 @@ const { data } = await useAsyncData(`content-${route.path}`, () =>
     .find()
 );
 
-if (!data.value || data.value.length <= 0) {
-  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
-}
+// if (!data.value || data.value.length <= 0) {
+//   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+// }
 
 const { data: categoryMeta } = await useAsyncData(
   `category-meta-${route.path}`,
