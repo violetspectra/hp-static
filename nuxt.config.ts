@@ -11,11 +11,4 @@ export default defineNuxtConfig({
       injectPage: false,
     },
   },
-  hooks: {
-    "nitro:config"(config) {
-      config.prerender!.routes = config.prerender!.routes!.filter(
-        (r) => r !== "/200.html"
-      );
-    },
-  },
 });
