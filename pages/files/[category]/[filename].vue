@@ -15,7 +15,11 @@ interface HypnoFile extends ParsedContent {
 
 const data = await queryContent<HypnoFile>(path).findOne();
 if (!data) {
-  throw createError({ statusCode: 404, statusMessage: "Page not found" });
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Page not found",
+    fatal: true,
+  });
 }
 
 /**
