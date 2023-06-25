@@ -34,11 +34,7 @@ useHead({});
         />
       </div>
       <div class="col-md-6 col-lg-3 mb-4">
-        <NavigationCard
-          title="Support"
-          location="/files/support"
-          :disabled="true"
-        />
+        <NavigationCard title="Support" location="/files/support" />
       </div>
     </div>
   </div>
