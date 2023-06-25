@@ -34,7 +34,11 @@ useHead({});
         />
       </div>
       <div class="col-md-6 col-lg-3 mb-4">
-        <NavigationCard title="Support" location="/files/support" />
+        <NavigationCard
+          title="Support"
+          location="/files/support"
+          imageUrl="/files/support/support-icon.png"
+        />
       </div>
     </div>
   </div>
