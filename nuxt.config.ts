@@ -6,9 +6,16 @@ export default defineNuxtConfig({
     "~/assets/style/theme.scss",
     "~/node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
   ],
-  content: {
-    // documentDriven: {
-    //   injectPage: false,
-    // },
-  },
+  // content: {
+  // documentDriven: {
+  //   injectPage: false,
+  // },
+  // },
+  ssr: true,
+  // router: {
+  //   options: {
+  //     strict: false,
+  //   },
+  // },
+  // sourcemap: false,
 });
