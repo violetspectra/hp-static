@@ -117,7 +117,7 @@ const playAudioInline = (
                     )
                   "
                   style="cursor: pointer"
-                  >{{ download.name }}</span
+                  ><i class="bi bi-play-fill"></i> {{ download.name }}</span
                 >
               </div>
               <a
