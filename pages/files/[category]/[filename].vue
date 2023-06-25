@@ -38,7 +38,7 @@ const playAudioInline = (
       <p>
         <NuxtLink to="/" class="text-white">Home</NuxtLink> &lt;
         <NuxtLink :to="`/files/${params.category}`" class="text-white">{{
-          titleCase(params.category)
+          titleCase(params.category as string)
         }}</NuxtLink>
       </p>
     </div>
