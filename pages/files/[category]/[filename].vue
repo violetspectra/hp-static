@@ -13,15 +13,10 @@ interface HypnoFile extends ParsedContent {
   }[];
 }
 
-const data = ref<HypnoFile | null>();
-try {
-  data.value = await queryContent<HypnoFile>(path).findOne();
-} catch (error) {
+const data = await queryContent<HypnoFile>(path).findOne();
+if (!data) {
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
 }
-// if (!data.value) {
-//   throw createError({ statusCode: 404, statusMessage: "Page not found" });
-// }
 
 /**
  * Triggers the inline player
