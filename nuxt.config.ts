@@ -11,4 +11,9 @@ export default defineNuxtConfig({
       injectPage: false,
     },
   },
+  nitro: {
+    prerender: {
+      routes: ["/sitemap.xml"],
+    },
+  },
 });
