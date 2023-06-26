@@ -13,6 +13,10 @@ const data = await queryContent(`/files/${route.params.category}`)
 const categoryMeta = await queryContent(`/files/${route.params.category}`)
   .where({ _partial: true })
   .findOne();
+
+useHead({
+  title: categoryMeta?.title,
+});
 </script>
 <template>
   <div class="text-center text-white py-5 container">

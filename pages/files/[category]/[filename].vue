@@ -15,6 +15,10 @@ interface HypnoFile extends ParsedContent {
 
 const data = await queryContent<HypnoFile>(path).findOne();
 
+useHead({
+  title: data?.title,
+});
+
 /**
  * Triggers the inline player
  */
