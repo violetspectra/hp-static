@@ -17,6 +17,7 @@ const categoryMeta = await queryContent(`/files/${route.params.category}`)
 useHead({
   title: categoryMeta?.title,
 });
+useSeoMeta({});
 </script>
 <template>
   <div class="text-center text-white py-5 container">
