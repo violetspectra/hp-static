@@ -13,7 +13,9 @@ interface HypnoFile extends ParsedContent {
   }[];
 }
 
-const data = await queryContent<HypnoFile>(path).findOne();
+const data = await queryContent<HypnoFile>(path)
+  .where({ _partial: false })
+  .findOne();
 
 useSeoMeta({
   title: data?.title,
