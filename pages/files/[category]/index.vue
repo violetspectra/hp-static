@@ -14,10 +14,14 @@ const categoryMeta = await queryContent(`/files/${route.params.category}`)
   .where({ _partial: true })
   .findOne();
 
-useHead({
+useSeoMeta({
   title: categoryMeta?.title,
+  ogTitle: `${categoryMeta?.title} - Hypnoponies`,
+  twitterTitle: `${categoryMeta?.title} - Hypnoponies`,
+  description: categoryMeta?.description,
+  ogDescription: categoryMeta?.description,
+  twitterDescription: categoryMeta?.description,
 });
-useSeoMeta({});
 </script>
 <template>
   <div class="text-center text-white py-5 container">

@@ -15,8 +15,10 @@ interface HypnoFile extends ParsedContent {
 
 const data = await queryContent<HypnoFile>(path).findOne();
 
-useHead({
+useSeoMeta({
   title: data?.title,
+  ogTitle: `${data?.title} - Hypnoponies`,
+  twitterTitle: `${data?.title} - Hypnoponies`,
 });
 
 /**
