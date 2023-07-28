@@ -27,6 +27,9 @@ useHead({});
         />
       </div>
       <div class="col-md-6 col-lg-3 mb-4">
+        <NavigationCard title="Generic" location="/files/generic" />
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
         <NavigationCard
           title="Experience"
           location="/files/experience"
